@@ -10,6 +10,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Script pentru optimizarea link-urilor Dropbox -->
+    <script>
+        function getDropboxImageUrl(url) {
+            // Transformă URL-urile de tipul www.dropbox.com/... în dl.dropboxusercontent.com/...
+            if (url.includes('dropbox.com')) {
+                // Adaugă parametrul dl=1 la link-uri pentru a le descărca direct
+                if (url.includes('?')) {
+                    if (!url.includes('dl=1')) {
+                        url = url.replace(/\?(.*)$/, '?dl=1&$1');
+                    }
+                } else {
+                    url += '?dl=1';
+                }
+                
+                // Înlocuiește domeniul pentru a avea acces direct la imagine
+                url = url.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
+                url = url.replace('dropbox.com', 'dl.dropboxusercontent.com');
+            }
+            return url;
+        }
+
+        // Funcție pentru a procesa toate imaginile din pagină
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img[data-dropbox-url]').forEach(function(img) {
+                const dropboxUrl = img.getAttribute('data-dropbox-url');
+                if (dropboxUrl) {
+                    img.src = getDropboxImageUrl(dropboxUrl);
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -56,7 +88,11 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="images/mariana-gorobet-phibrows.png" alt="Mariana Gorobet - Expert PhiBrows Microblading" class="portrait-image">
+                    <img 
+                        src="images/placeholder.png" 
+                        data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                        alt="Mariana Gorobet - Expert PhiBrows Microblading" 
+                        class="portrait-image">
                 </div>
             </div>
         </section>
@@ -132,7 +168,10 @@
                 <h2>Despre Mariana Gorobet</h2>
                 <div class="artist-content">
                     <div class="artist-image">
-                        <img src="images/mariana-portrait-full.png" alt="Mariana Gorobet - Artist PMU">
+                        <img 
+                            src="images/placeholder.png" 
+                            data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                            alt="Mariana Gorobet - Artist PMU">
                     </div>
                     <div class="artist-bio">
                         <h3 class="glow-text">Royal Artist în Micropigmentare</h3>
