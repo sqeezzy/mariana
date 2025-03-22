@@ -13,6 +13,9 @@
     
     <!-- Script pentru optimizarea link-urilor Dropbox -->
     <script>
+        // Creare imagine placeholder SVG direct în JavaScript
+        const placeholderSvg = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23483D8B' /%3E%3Ctext x='50%' y='50%' font-size='18' text-anchor='middle' fill='%23D4AF37' font-family='Arial, sans-serif' dominant-baseline='middle'%3EÎncarcare imagine...%3C/text%3E%3C/svg%3E`;
+        
         function getDropboxImageUrl(url) {
             // Transformă URL-urile de tipul www.dropbox.com/... în dl.dropboxusercontent.com/...
             if (url.includes('dropbox.com')) {
@@ -35,9 +38,25 @@
         // Funcție pentru a procesa toate imaginile din pagină
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('img[data-dropbox-url]').forEach(function(img) {
+                // Setează imaginea placeholder
+                if (img.src.includes('placeholder') || !img.src) {
+                    img.src = placeholderSvg;
+                }
+                
                 const dropboxUrl = img.getAttribute('data-dropbox-url');
                 if (dropboxUrl) {
-                    img.src = getDropboxImageUrl(dropboxUrl);
+                    const optimizedUrl = getDropboxImageUrl(dropboxUrl);
+                    
+                    // Preîncarcă imaginea pentru a verifica dacă poate fi încărcată
+                    const preloadImg = new Image();
+                    preloadImg.onload = function() {
+                        img.src = optimizedUrl;
+                    };
+                    preloadImg.onerror = function() {
+                        console.error('Nu s-a putut încărca imaginea:', optimizedUrl);
+                        // Păstrează placeholder-ul în caz de eroare
+                    };
+                    preloadImg.src = optimizedUrl;
                 }
             });
         });
@@ -48,9 +67,10 @@
         <nav>
             <div class="logo">PhiBrows Studio</div>
             <ul class="nav-links">
-                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#acasa" class="active">Home</a></li>
                 <li><a href="#prezentare">Microblading</a></li>
                 <li><a href="#despre-mariana">Despre Mariana</a></li>
+                <li><a href="#galerie">Galerie</a></li>
             </ul>
             <div class="mobile-menu-btn">
                 <span></span>
@@ -129,7 +149,10 @@
                     </div>
                     
                     <div class="presentation-image">
-                        <img src="images/03.jpg" alt="Procedură Microblading Sprâncene">
+                        <img 
+                            src="images/placeholder.png" 
+                            data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                            alt="Procedură Microblading Sprâncene">
                     </div>
                 </div>
             </div>
@@ -200,7 +223,31 @@
         </section>
 
         <!-- Contact -->
-        
+        <section id="galerie" class="gallery-section">
+            <div class="container">
+                <h2>Galerie de lucrări</h2>
+                <div class="gallery-grid">
+                    <!-- Imaginile galeriei cu Dropbox -->
+                    <div class="gallery-item">
+                        <img 
+                            src="images/placeholder.png" 
+                            data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                            alt="Exemplu de lucrare Microblading"
+                            class="slide-image">
+                    </div>
+                    <!-- Se pot adăuga mai multe imagini aici -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal pentru vizualizare imagini -->
+        <div id="image-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <img id="modal-image" src="" alt="">
+                <div class="modal-caption"></div>
+            </div>
+        </div>
     </main>
 
     <footer>
@@ -216,6 +263,7 @@
                         <li><a href="#acasa">Acasă</a></li>
                         <li><a href="#prezentare">Microblading</a></li>
                         <li><a href="#despre-mariana">Despre Mariana</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -234,108 +282,148 @@
     <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
     <script>
-        // Navigație și smooth scroll
-        // ... existing code ...
-
-        // Portofoliu filtru
-        // ... existing code ...
-
-        // Lucrări avansate - Tab-uri și Slider
         document.addEventListener('DOMContentLoaded', function() {
+            // Navigație mobilă
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileMenuBtn && navLinks) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                });
+            }
+            
+            // Smooth scrolling pentru toate ancorele
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Închide meniul mobil dacă este deschis
+                        if (navLinks && navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
+                        }
+                    }
+                });
+            });
+            
             // Tab-uri pentru categorii
             const workTabs = document.querySelectorAll('.work-tab');
             const worksCategories = document.querySelectorAll('.works-category');
             
-            workTabs.forEach(tab => {
-                tab.addEventListener('click', function() {
-                    // Dezactivează toate tab-urile
-                    workTabs.forEach(t => t.classList.remove('active'));
-                    // Ascunde toate categoriile
-                    worksCategories.forEach(c => c.classList.remove('active'));
-                    
-                    // Activează tab-ul curent
-                    this.classList.add('active');
-                    // Afișează categoria corespunzătoare
-                    const category = this.getAttribute('data-category');
-                    const categoryElement = document.getElementById(`${category}-works`);
-                    if (categoryElement) {
-                        categoryElement.classList.add('active');
-                    }
-                    
-                    // Resetează sliderul pentru categoria activă
-                    resetActiveSlider();
-                });
-            });
-            
-            // Control Slider pentru fiecare categorie
-            const sliders = document.querySelectorAll('.advanced-slider');
-            
-            sliders.forEach(slider => {
-                const slidesContainer = slider.querySelector('.advanced-slides-container');
-                const slides = slider.querySelectorAll('.advanced-slide');
-                const prevBtn = slider.querySelector('.advanced-slide-prev');
-                const nextBtn = slider.querySelector('.advanced-slide-next');
-                const indicators = slider.querySelectorAll('.indicator');
-                
-                let currentIndex = 0;
-                const totalSlides = slides.length;
-                
-                // Funcție pentru actualizare slider
-                function updateSlider() {
-                    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-                    
-                    // Actualizează indicatorii
-                    indicators.forEach((indicator, index) => {
-                        if (index === currentIndex) {
-                            indicator.classList.add('active');
-                        } else {
-                            indicator.classList.remove('active');
+            if (workTabs.length > 0 && worksCategories.length > 0) {
+                workTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // Dezactivează toate tab-urile
+                        workTabs.forEach(t => t.classList.remove('active'));
+                        // Ascunde toate categoriile
+                        worksCategories.forEach(c => c.classList.remove('active'));
+                        
+                        // Activează tab-ul curent
+                        this.classList.add('active');
+                        // Afișează categoria corespunzătoare
+                        const category = this.getAttribute('data-category');
+                        const categoryElement = document.getElementById(`${category}-works`);
+                        if (categoryElement) {
+                            categoryElement.classList.add('active');
+                        }
+                        
+                        // Resetează sliderul pentru categoria activă
+                        if (typeof resetActiveSlider === 'function') {
+                            resetActiveSlider();
                         }
                     });
-                }
-                
-                // Event pentru butonul Next
-                nextBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    updateSlider();
                 });
                 
-                // Event pentru butonul Prev
-                prevBtn.addEventListener('click', () => {
-                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                    updateSlider();
-                });
+                // Control Slider pentru fiecare categorie
+                const sliders = document.querySelectorAll('.advanced-slider');
                 
-                // Event pentru indicatori
-                indicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => {
-                        currentIndex = index;
+                if (sliders.length > 0) {
+                    sliders.forEach(slider => {
+                        const slidesContainer = slider.querySelector('.advanced-slides-container');
+                        const slides = slider.querySelectorAll('.advanced-slide');
+                        const prevBtn = slider.querySelector('.advanced-slide-prev');
+                        const nextBtn = slider.querySelector('.advanced-slide-next');
+                        const indicators = slider.querySelectorAll('.indicator');
+                        
+                        if (!slidesContainer || slides.length === 0) return;
+                        
+                        let currentIndex = 0;
+                        const totalSlides = slides.length;
+                        
+                        // Funcție pentru actualizare slider
+                        function updateSlider() {
+                            slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                            
+                            // Actualizează indicatorii
+                            indicators.forEach((indicator, index) => {
+                                if (index === currentIndex) {
+                                    indicator.classList.add('active');
+                                } else {
+                                    indicator.classList.remove('active');
+                                }
+                            });
+                        }
+                        
+                        // Event pentru butonul Next
+                        if (nextBtn) {
+                            nextBtn.addEventListener('click', () => {
+                                currentIndex = (currentIndex + 1) % totalSlides;
+                                updateSlider();
+                            });
+                        }
+                        
+                        // Event pentru butonul Prev
+                        if (prevBtn) {
+                            prevBtn.addEventListener('click', () => {
+                                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                                updateSlider();
+                            });
+                        }
+                        
+                        // Event pentru indicatori
+                        indicators.forEach((indicator, index) => {
+                            indicator.addEventListener('click', () => {
+                                currentIndex = index;
+                                updateSlider();
+                            });
+                        });
+                        
+                        // Inițializează slider-ul
                         updateSlider();
                     });
-                });
-                
-                // Inițializează slider-ul
-                updateSlider();
-            });
-            
-            // Resetează slider-ul activ
-            function resetActiveSlider() {
-                const activeCategory = document.querySelector('.works-category.active');
-                if (activeCategory) {
-                    const slidesContainer = activeCategory.querySelector('.advanced-slides-container');
-                    const indicators = activeCategory.querySelectorAll('.indicator');
                     
-                    // Resetează poziția
-                    slidesContainer.style.transform = 'translateX(0)';
-                    
-                    // Resetează indicatorii
-                    indicators.forEach((indicator, index) => {
-                        if (index === 0) {
-                            indicator.classList.add('active');
-                        } else {
-                            indicator.classList.remove('active');
+                    // Resetează slider-ul activ
+                    window.resetActiveSlider = function() {
+                        const activeCategory = document.querySelector('.works-category.active');
+                        if (activeCategory) {
+                            const slidesContainer = activeCategory.querySelector('.advanced-slides-container');
+                            const indicators = activeCategory.querySelectorAll('.indicator');
+                            
+                            if (slidesContainer) {
+                                // Resetează poziția
+                                slidesContainer.style.transform = 'translateX(0)';
+                                
+                                // Resetează indicatorii
+                                indicators.forEach((indicator, index) => {
+                                    if (index === 0) {
+                                        indicator.classList.add('active');
+                                    } else {
+                                        indicator.classList.remove('active');
+                                    }
+                                });
+                            }
                         }
-                    });
+                    };
                 }
             }
             
@@ -343,7 +431,7 @@
             const images = document.querySelectorAll('.slide-image');
             const modal = document.getElementById('image-modal');
             
-            if (modal) {
+            if (modal && images.length > 0) {
                 const modalImg = document.getElementById('modal-image');
                 const modalCaption = document.querySelector('.modal-caption');
                 const closeModal = document.querySelector('.close-modal');
