@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site-ul Meu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Site-ul Meu</div>
+            <ul class="menu">
+                <li><a href="#acasa">Acasă</a></li>
+                <li><a href="#despre">Despre</a></li>
+                <li><a href="#servicii">Servicii</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="acasa" class="hero">
+            <div class="container">
+                <h1>Bine ai venit pe site-ul meu</h1>
+                <p>Acesta este un site de start pe care îl putem edita împreună.</p>
+                <button class="btn">Află mai multe</button>
+            </div>
+        </section>
+
+        <section id="despre" class="about">
+            <div class="container">
+                <h2>Despre noi</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis vel nunc volutpat convallis in vel justo.</p>
+            </div>
+        </section>
+
+        <section id="servicii" class="services">
+            <div class="container">
+                <h2>Serviciile noastre</h2>
+                <div class="service-cards">
+                    <div class="card">
+                        <h3>Serviciu 1</h3>
+                        <p>Descriere serviciu 1</p>
+                    </div>
+                    <div class="card">
+                        <h3>Serviciu 2</h3>
+                        <p>Descriere serviciu 2</p>
+                    </div>
+                    <div class="card">
+                        <h3>Serviciu 3</h3>
+                        <p>Descriere serviciu 3</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="nume">Nume</label>
+                        <input type="text" id="nume" name="nume" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mesaj">Mesaj</label>
+                        <textarea id="mesaj" name="mesaj" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Trimite</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Site-ul Meu. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

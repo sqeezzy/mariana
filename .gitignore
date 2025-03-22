@@ -1,0 +1,25 @@
+# Fișiere sistem
+.DS_Store
+Thumbs.db
+
+# Directoare și fișiere de mediu
+node_modules/
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Fișiere de cache
+.cache/
+.sass-cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor și IDE
+.idea/
+.vscode/
+*.swp
+*.swo 
