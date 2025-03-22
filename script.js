@@ -23,10 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Animație de scroller lin pentru meniul de navigare
-    const links = document.querySelectorAll('nav a, .footer-links a, .cta-buttons a, .service-btn');
+    const navLinks = document.querySelectorAll('nav a, .footer-links a, .cta-buttons a, .service-btn');
     
-    links.forEach(link => {
-        if (link.getAttribute('href').startsWith('#')) {
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 
@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Gestionarea formularului de contact
-    const contactForm = document.querySelector('#appointmentForm');
+    // Gestionarea formularului de contact principal
+    const mainContactForm = document.querySelector('#appointmentForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    if (mainContactForm) {
+        mainContactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             // Validare și procesare formular
@@ -77,53 +77,53 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(`Mulțumim, ${nume}! Am primit cererea ta pentru serviciul de ${serviciu}. Te vom contacta în curând la numărul ${telefon} pentru a confirma programarea.`);
             
             // Resetăm formularul
-            contactForm.reset();
+            mainContactForm.reset();
         });
     }
     
     // Slider pentru testimoniale
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    let currentSlide = 0;
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const prevTestimonialBtn = document.querySelector('.prev-btn');
+    const nextTestimonialBtn = document.querySelector('.next-btn');
+    let currentTestimonialIndex = 0;
     
-    function showSlide(n) {
-        slides.forEach(slide => {
+    function showTestimonialSlide(n) {
+        testimonialSlides.forEach(slide => {
             slide.style.opacity = '0';
             slide.style.position = 'absolute';
         });
         
-        slides[n].style.opacity = '1';
-        slides[n].style.position = 'relative';
+        testimonialSlides[n].style.opacity = '1';
+        testimonialSlides[n].style.position = 'relative';
     }
     
-    if (slides.length > 0 && prevBtn && nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+    if (testimonialSlides.length > 0 && prevTestimonialBtn && nextTestimonialBtn) {
+        nextTestimonialBtn.addEventListener('click', function() {
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
+            showTestimonialSlide(currentTestimonialIndex);
         });
         
-        prevBtn.addEventListener('click', function() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
+        prevTestimonialBtn.addEventListener('click', function() {
+            currentTestimonialIndex = (currentTestimonialIndex - 1 + testimonialSlides.length) % testimonialSlides.length;
+            showTestimonialSlide(currentTestimonialIndex);
         });
         
         // Auto slide la fiecare 5 secunde
         setInterval(function() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
+            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialSlides.length;
+            showTestimonialSlide(currentTestimonialIndex);
         }, 5000);
     }
     
     // Filtru pentru portofoliu
-    const filterBtns = document.querySelectorAll('.filter-btn');
+    const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item');
     
-    if (filterBtns.length > 0 && galleryItems.length > 0) {
-        filterBtns.forEach(btn => {
+    if (filterButtons.length > 0 && galleryItems.length > 0) {
+        filterButtons.forEach(btn => {
             btn.addEventListener('click', function() {
                 // Actualizăm butonul activ
-                filterBtns.forEach(b => b.classList.remove('active'));
+                filterButtons.forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
                 
                 const filter = this.getAttribute('data-filter');
@@ -200,155 +200,272 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Funcționalitatea pop-up-ului de programare
-    const openPopupBtns = document.querySelectorAll('.open-popup');
-    const closePopup = document.querySelector('.close-popup');
-    const popup = document.getElementById('appointment-popup');
-    const appointmentForm = document.getElementById('appointment-form');
+    const openPopupButtons = document.querySelectorAll('.open-popup');
+    const closePopupButton = document.querySelector('.close-popup');
+    const schedulePopup = document.getElementById('appointment-popup');
+    const scheduleForm = document.getElementById('appointment-form');
     
     // Deschide pop-up-ul
-    openPopupBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            popup.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Previne scroll-ul
+    if (openPopupButtons.length > 0 && schedulePopup) {
+        openPopupButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                schedulePopup.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Previne scroll-ul
+            });
         });
-    });
+    }
     
     // Închide pop-up-ul
-    if (closePopup && popup) {
-        closePopup.addEventListener('click', function() {
-            popup.classList.remove('active');
+    if (closePopupButton && schedulePopup) {
+        closePopupButton.addEventListener('click', function() {
+            schedulePopup.classList.remove('active');
             document.body.style.overflow = 'auto'; // Reactivează scroll-ul
         });
         
-        // Închide pop-up-ul când se face click în afara conținutului
-        popup.addEventListener('click', function(e) {
-            if (e.target === popup) {
-                popup.classList.remove('active');
+        // Închide pop-up când utilizatorul face clic în afara conținutului
+        schedulePopup.addEventListener('click', function(e) {
+            if (e.target === schedulePopup) {
+                schedulePopup.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         });
     }
     
-    // Procesare formular de programare
-    if (appointmentForm) {
-        appointmentForm.addEventListener('submit', function(e) {
+    // Validare formular programare
+    if (scheduleForm) {
+        scheduleForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = {
-                nume: document.getElementById('nume').value,
-                telefon: document.getElementById('telefon').value,
-                oras: document.getElementById('oras').value
-            };
+            const nume = document.getElementById('nume').value;
+            const telefon = document.getElementById('telefon').value;
+            const oras = document.getElementById('oras').value;
             
-            // Ar trebui implementat un sistem de stocare/trimitere a datelor
-            // Pentru demo, afișăm doar un mesaj de confirmare
-            alert(`Programare înregistrată! Vă vom contacta în curând.
-                  Nume: ${formData.nume}
-                  Telefon: ${formData.telefon}
-                  Oraș: ${formData.oras}`);
-            
-            // Resetați formularul și închideți pop-up-ul
-            appointmentForm.reset();
-            popup.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-    
-    // Funcționalitatea slider-ului galeriei
-    const gallerySlider = document.querySelector('.gallery-slider');
-    const gallerySlides = document.querySelectorAll('.gallery-slide');
-    const prevSlideBtn = document.querySelector('.prev-slide');
-    const nextSlideBtn = document.querySelector('.next-slide');
-    const galleryFilterBtns = document.querySelectorAll('.gallery-btn');
-    
-    if (gallerySlider && gallerySlides.length > 0) {
-        let currentSlide = 0;
-        
-        // Funcția pentru a afișa un slide specific
-        function showSlide(index) {
-            // Ascunde toate slide-urile
-            gallerySlides.forEach(slide => {
-                slide.style.display = 'none';
-            });
-            
-            // Afișează slide-ul curent
-            gallerySlides[index].style.display = 'block';
-            currentSlide = index;
-        }
-        
-        // Inițial afișăm primul slide
-        showSlide(0);
-        
-        // Event listeners pentru butoanele de navigare
-        if (prevSlideBtn && nextSlideBtn) {
-            prevSlideBtn.addEventListener('click', function() {
-                let newIndex = currentSlide - 1;
-                if (newIndex < 0) {
-                    newIndex = gallerySlides.length - 1;
-                }
-                showSlide(newIndex);
-            });
-            
-            nextSlideBtn.addEventListener('click', function() {
-                let newIndex = currentSlide + 1;
-                if (newIndex >= gallerySlides.length) {
-                    newIndex = 0;
-                }
-                showSlide(newIndex);
-            });
-        }
-        
-        // Filtrare galerie în funcție de categorie
-        if (galleryFilterBtns.length > 0) {
-            galleryFilterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Elimină clasa "active" de pe toate butoanele
-                    galleryFilterBtns.forEach(b => b.classList.remove('active'));
-                    // Adaugă clasa "active" pe butonul curent
-                    this.classList.add('active');
-                    
-                    const filter = this.getAttribute('data-filter');
-                    
-                    // Afișează toate slide-urile inițial
-                    gallerySlides.forEach(slide => {
-                        slide.style.display = 'none';
-                    });
-                    
-                    // Filtrare și afișare slide-uri în funcție de categorie
-                    if (filter === 'toate') {
-                        // Afișează primul slide din toate categoriile
-                        showSlide(0);
-                    } else {
-                        // Afișează doar slide-urile din categoria selectată
-                        const filteredSlides = [...gallerySlides].filter(slide => 
-                            slide.getAttribute('data-category') === filter
-                        );
-                        
-                        if (filteredSlides.length > 0) {
-                            // Afișează primul slide din categoria filtrată
-                            filteredSlides[0].style.display = 'block';
-                            currentSlide = Array.from(gallerySlides).indexOf(filteredSlides[0]);
-                        }
-                    }
-                });
-            });
-        }
-    }
-    
-    // Funcționalitate smooth scroll pentru link-uri de ancorare
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Ajustare pentru header fix
-                    behavior: 'smooth'
-                });
+            if (nume && telefon && oras) {
+                // Aici ar putea fi codul pentru trimiterea datelor la server
+                alert('Programarea a fost înregistrată cu succes!');
+                this.reset();
+                schedulePopup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                alert('Toate câmpurile sunt obligatorii!');
             }
         });
-    });
+    }
+    
+    // Elemente galerie
+    const galleryNavButtons = document.querySelectorAll('.gallery-btn');
+    const galleryImageSlides = document.querySelectorAll('.gallery-slide');
+    const galleryContainer = document.querySelector('.gallery-slider');
+    const prevGalleryButton = document.querySelector('.prev-slide');
+    const nextGalleryButton = document.querySelector('.next-slide');
+    let currentGalleryIndex = 0;
+    
+    // Funcția pentru afișarea slide-urilor în galerie
+    function showGallerySlide(index) {
+        galleryImageSlides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        
+        galleryImageSlides[index].style.display = 'block';
+    }
+    
+    // Filtrare galerie
+    if (galleryNavButtons.length > 0 && galleryImageSlides.length > 0) {
+        galleryNavButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Elimină clasa active de pe toate butoanele
+                galleryNavButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Adaugă clasa active pe butonul curent
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                let visibleSlides = [];
+                
+                galleryImageSlides.forEach((slide, idx) => {
+                    if (filter === 'toate' || slide.getAttribute('data-category') === filter) {
+                        slide.dataset.visible = 'true';
+                        visibleSlides.push(idx);
+                    } else {
+                        slide.dataset.visible = 'false';
+                    }
+                });
+                
+                // Resetăm indexul curent și afișăm primul slide vizibil
+                if (visibleSlides.length > 0) {
+                    currentGalleryIndex = visibleSlides[0];
+                    showGallerySlide(currentGalleryIndex);
+                }
+            });
+        });
+    }
+    
+    // Navigare galerie (prev/next)
+    if (prevGalleryButton && nextGalleryButton && galleryContainer && galleryImageSlides.length > 0) {
+        // Funcția pentru actualizarea poziției galerie
+        function updateGalleryPosition() {
+            showGallerySlide(currentGalleryIndex);
+        }
+        
+        prevGalleryButton.addEventListener('click', function() {
+            // Găsim următorul slide vizibil în direcția înapoi
+            let newIndex = currentGalleryIndex;
+            let count = 0;
+            
+            while (count < galleryImageSlides.length) {
+                newIndex = (newIndex - 1 + galleryImageSlides.length) % galleryImageSlides.length;
+                
+                if (!galleryImageSlides[newIndex].dataset.visible || 
+                    galleryImageSlides[newIndex].dataset.visible === 'true') {
+                    currentGalleryIndex = newIndex;
+                    break;
+                }
+                
+                count++;
+            }
+            
+            updateGalleryPosition();
+        });
+        
+        nextGalleryButton.addEventListener('click', function() {
+            // Găsim următorul slide vizibil în direcția înainte
+            let newIndex = currentGalleryIndex;
+            let count = 0;
+            
+            while (count < galleryImageSlides.length) {
+                newIndex = (newIndex + 1) % galleryImageSlides.length;
+                
+                if (!galleryImageSlides[newIndex].dataset.visible || 
+                    galleryImageSlides[newIndex].dataset.visible === 'true') {
+                    currentGalleryIndex = newIndex;
+                    break;
+                }
+                
+                count++;
+            }
+            
+            updateGalleryPosition();
+        });
+        
+        // Inițializăm poziția galerie
+        updateGalleryPosition();
+    }
+    
+    // Schimbare locații (București/Chișinău)
+    const locationTabs = document.querySelectorAll('.location-tab');
+    const locationContents = document.querySelectorAll('.location-content');
+    
+    if (locationTabs.length > 0 && locationContents.length > 0) {
+        locationTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Elimină clasa active de pe toate butoanele
+                locationTabs.forEach(t => t.classList.remove('active'));
+                // Adaugă clasa active pe butonul curent
+                this.classList.add('active');
+                
+                // Ascunde toate conținuturile de locație
+                locationContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Afișează conținutul corespunzător
+                const city = this.getAttribute('data-city');
+                document.getElementById(`${city}-location`).classList.add('active');
+            });
+        });
+    }
+    
+    // Galerie de imagini cu efect de scrolare completă (Fullpage Scrolling Gallery)
+    const fullGalleryImages = document.querySelectorAll('.full-gallery-image');
+    
+    if (fullGalleryImages.length > 0) {
+        let fullGalleryIndex = 0;
+        const fullGalleryCount = fullGalleryImages.length;
+        
+        // Ascunde toate imaginile în afară de prima
+        fullGalleryImages.forEach((img, index) => {
+            if (index !== 0) {
+                img.style.opacity = 0;
+            }
+        });
+        
+        // Funcție pentru a naviga în galerie
+        function navigateFullGallery(direction) {
+            fullGalleryImages[fullGalleryIndex].style.opacity = 0;
+            
+            fullGalleryIndex = (fullGalleryIndex + direction + fullGalleryCount) % fullGalleryCount;
+            
+            fullGalleryImages[fullGalleryIndex].style.opacity = 1;
+        }
+        
+        // Adaugă navigare cu tastatura săgeți
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                navigateFullGallery(1);
+            } else if (e.key === 'ArrowLeft') {
+                navigateFullGallery(-1);
+            }
+        });
+        
+        // Adaugă navigare cu butoane pe ecran (dacă există)
+        const fullGalleryNext = document.querySelector('.full-gallery-next');
+        const fullGalleryPrev = document.querySelector('.full-gallery-prev');
+        
+        if (fullGalleryNext) {
+            fullGalleryNext.addEventListener('click', () => navigateFullGallery(1));
+        }
+        
+        if (fullGalleryPrev) {
+            fullGalleryPrev.addEventListener('click', () => navigateFullGallery(-1));
+        }
+        
+        // Adaugă navigare cu swipe pentru dispozitive mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleFullGallerySwipe();
+        }, false);
+        
+        function handleFullGallerySwipe() {
+            if (touchEndX < touchStartX) {
+                // Swipe stânga -> imagine următoare
+                navigateFullGallery(1);
+            } else if (touchEndX > touchStartX) {
+                // Swipe dreapta -> imagine anterioară
+                navigateFullGallery(-1);
+            }
+        }
+    }
+    
+    // Validare și procesare formular de contact secundar
+    const secondaryContactForm = document.getElementById('contactForm');
+    if (secondaryContactForm) {
+        secondaryContactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Exemplu de validare simplă
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+            
+            // Verificare dacă toate câmpurile sunt completate
+            if (name && email && phone && city && message) {
+                // Aici ar trebui să adaugi codul pentru a trimite datele la server
+                // Pentru acest exemplu, doar afișăm un mesaj de succes
+                
+                alert('Mulțumim pentru mesaj! Te vom contacta în curând.');
+                secondaryContactForm.reset();
+            } else {
+                alert('Te rugăm să completezi toate câmpurile obligatorii.');
+            }
+        });
+    }
 }); 
