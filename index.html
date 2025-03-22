@@ -15,12 +15,12 @@
     <header>
         <nav>
             <div class="logo">PhiBrows Studio</div>
-            <ul class="menu">
-                <li><a href="#acasa">Acasă</a></li>
-                <li><a href="#prezentare">Microblading</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#despre-mariana">Despre Mariana</a></li>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">Despre</a></li>
                 <li><a href="#servicii">Servicii</a></li>
+                <li><a href="#portofoliu">Portofoliu</a></li>
+                <li><a href="#lucrari-avansate">Lucrări</a></li>
                 <li><a href="#testimoniale">Testimoniale</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -214,6 +214,47 @@
             </div>
         </section>
 
+        <!-- Secțiune de Descriere -->
+        <section id="descriere" class="description">
+            <div class="container">
+                <h2>Filozofia noastră</h2>
+                <div class="description-content">
+                    <div class="description-image">
+                        <img src="images/mariana-portrait-elegant.jpg" alt="Mariana Gorobet - Portret elegant">
+                    </div>
+                    <div class="description-text">
+                        <h3 class="glow-text">Arta sprâncenelor perfecte</h3>
+                        
+                        <div class="description-paragraphs">
+                            <p>În domeniul artei microblading-ului, fiecare sprânceană este o operă de artă unică. Abordarea mea combină cunoștințele tehnice avansate cu o sensibilitate artistică pentru a crea sprâncene care nu doar arată natural, ci și completează perfect trăsăturile individuale ale fiecărui client.</p>
+                            
+                            <p>Pentru mine, microblading-ul nu este doar un serviciu, ci o pasiune și o artă. Fiecare procedură începe cu o consultație atentă, în care ascult cu atenție dorințele clientului, analizez structura facială și propun soluția optimă care evidențiază frumusețea naturală.</p>
+                            
+                            <p>Folosesc exclusiv pigmenți de înaltă calitate și instrumente premium certificate, asigurând astfel că rezultatele sunt nu doar estetice, ci și sigure și durabile. Tehnica mea de PhiBrows Microblading a fost perfecționată de-a lungul anilor prin studiu continuu și participare la conferințe internaționale.</p>
+                            
+                            <p>Cred cu tărie că fiecare persoană merită să se simtă încrezătoare și frumoasă în fiecare zi. Sprâncenele bine conturate pot transforma întreaga expresie facială, oferind un aspect proaspăt și armonios fără efort zilnic.</p>
+                            
+                            <blockquote class="gold-quote">
+                                "Frumusețea nu constă în perfecțiune, ci în armonie și echilibru. Fiecare trăsătură facială are propria poveste, iar eu doar o subliniez."
+                            </blockquote>
+                            
+                            <p>Prioritatea mea absolută este satisfacția clienților. Mă mândresc cu atenția la detalii și cu abordarea personalizată a fiecărui caz. Nu există două perechi de sprâncene identice în studiourile mele - fiecare lucrare este personalizată pentru a reflecta personalitatea și stilul unic al clientului.</p>
+                        </div>
+                        
+                        <div class="description-principles">
+                            <h4>Principiile fundamentale:</h4>
+                            <ul class="principles-list">
+                                <li><span class="principle-icon"><i class="fas fa-gem"></i></span> <span class="principle-text">Calitate fără compromis în fiecare aspect al serviciului</span></li>
+                                <li><span class="principle-icon"><i class="fas fa-user-shield"></i></span> <span class="principle-text">Siguranță și igienă impecabilă în timpul procedurilor</span></li>
+                                <li><span class="principle-icon"><i class="fas fa-palette"></i></span> <span class="principle-text">Abordare artistică personalizată pentru fiecare client</span></li>
+                                <li><span class="principle-icon"><i class="fas fa-graduation-cap"></i></span> <span class="principle-text">Perfecționare continuă prin educație și inovație</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Despre noi -->
         <section id="despre" class="about">
             <div class="container">
@@ -340,6 +381,255 @@
             </div>
         </section>
 
+        <!-- Lucrări Avansate - Slider Interactiv -->
+        <section id="lucrari-avansate" class="advanced-works">
+            <div class="container">
+                <h2>Lucrările noastre</h2>
+                
+                <div class="works-tabs">
+                    <button class="work-tab active" data-category="microblading">Microblading</button>
+                    <button class="work-tab" data-category="pudrat">Efect Pudrat</button>
+                    <button class="work-tab" data-category="eyeliner">Eyeliner</button>
+                    <button class="work-tab" data-category="aquarelle">Aquarelle Lips</button>
+                </div>
+                
+                <!-- Secțiunea 1: Microblading -->
+                <div class="works-category active" id="microblading-works">
+                    <div class="advanced-slider">
+                        <div class="advanced-slides-container">
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/microblading1.jpg" alt="Microblading Natural" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Microblading Natural</h3>
+                                    <p>Această tehnică manuală de micropigmentare creează fire fine, precise și extrem de naturale. Ideal pentru persoanele cu sprâncene rare sau neuniforme.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/microblading2.jpg" alt="Microblading Tehnica Fir cu Fir" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Tehnica Fir cu Fir</h3>
+                                    <p>Fiecare fir de păr este plasat strategic pentru a crea volumul optim și forma perfectă, adaptată trăsăturilor faciale unice ale clientei.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2.5 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/microblading3.jpg" alt="Microblading Corecție" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Corecție Microblading</h3>
+                                    <p>Transformarea completă a unor sprâncene asimetrice prin tehnica microblading, oferind echilibru și armonie feței.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 3 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advanced-slider-controls">
+                            <button class="advanced-slide-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="advanced-slide-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <button class="advanced-slide-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secțiunea 2: Efect Pudrat -->
+                <div class="works-category" id="pudrat-works">
+                    <div class="advanced-slider">
+                        <div class="advanced-slides-container">
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/powder1.jpg" alt="Efect Pudrat Natural" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Efect Pudrat Natural</h3>
+                                    <p>Această tehnică oferă un aspect delicat, asemănător unui machiaj perfect aplicat cu farduri de sprâncene, dar fără efortul zilnic.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/powder2.jpg" alt="Efect Pudrat Definit" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Efect Pudrat Definit</h3>
+                                    <p>Un look mai intens și definit, ideal pentru persoanele care preferă sprâncene mai pronunțate și cu contur perfect.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/powder3.jpg" alt="Efect Pudrat Ombre" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Efect Pudrat Ombre</h3>
+                                    <p>Tehnică graduală de la un aspect mai deschis la rădăcină spre un efect mai intens la vârf, pentru un look modern și sofisticat.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2.5 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advanced-slider-controls">
+                            <button class="advanced-slide-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="advanced-slide-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <button class="advanced-slide-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secțiunea 3: Eyeliner -->
+                <div class="works-category" id="eyeliner-works">
+                    <div class="advanced-slider">
+                        <div class="advanced-slides-container">
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/eyeliner1.jpg" alt="Eyeliner Natural" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Eyeliner Natural</h3>
+                                    <p>O linie delicată aplicată la baza genelor, care intensifică privirea fără a crea un aspect dramatic. Perfect pentru look-ul de zi cu zi.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 1.5 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/eyeliner2.jpg" alt="Eyeliner Definit" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Eyeliner Definit</h3>
+                                    <p>Un contur mai pronunțat și intens, care definește perfect linia genelor și conferă profunzime privirii.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/eyeliner3.jpg" alt="Eyeliner Cat Eye" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Eyeliner Cat Eye</h3>
+                                    <p>Un stil elegant cu o extensie fină la colțul extern al ochiului, creând efectul de lifting și alungire a ochilor.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2.5 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advanced-slider-controls">
+                            <button class="advanced-slide-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="advanced-slide-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <button class="advanced-slide-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Secțiunea 4: Aquarelle Lips -->
+                <div class="works-category" id="aquarelle-works">
+                    <div class="advanced-slider">
+                        <div class="advanced-slides-container">
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/lips1.jpg" alt="Aquarelle Lips Natural" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Aquarelle Lips Natural</h3>
+                                    <p>Un efect delicat, asemănător cu aplicarea unui balsam colorat, care oferă buzelor un aspect hidratat și ușor nuanțat.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/lips2.jpg" alt="Aquarelle Lips Conturate" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Aquarelle Lips Conturate</h3>
+                                    <p>Tehnică ce combină conturarea subtilă a buzelor cu o umplere graduală, pentru un efect de volum și definire.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> Chișinău</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 2.5 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="advanced-slide">
+                                <div class="slide-image-container">
+                                    <img src="images/works/lips3.jpg" alt="Aquarelle Lips Intense" class="slide-image">
+                                </div>
+                                <div class="slide-content">
+                                    <h3>Aquarelle Lips Intense</h3>
+                                    <p>Un look mai intens, similar cu aplicarea unui ruj, oferind buzelor culoare completă și definire perfectă, fără necesitatea retușului zilnic.</p>
+                                    <div class="slide-details">
+                                        <span class="location"><i class="fas fa-map-marker-alt"></i> București</span>
+                                        <span class="duration"><i class="far fa-clock"></i> Durată: 3 ore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="advanced-slider-controls">
+                            <button class="advanced-slide-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="advanced-slide-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                            </div>
+                            <button class="advanced-slide-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal pentru vizualizarea imaginilor -->
+            <div id="image-modal" class="image-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modal-image">
+                <div class="modal-caption"></div>
+            </div>
+        </section>
+
         <!-- Testimoniale -->
         <section id="testimoniale" class="testimonials">
             <div class="container">
@@ -453,22 +743,48 @@
         <section id="contact" class="contact">
             <div class="container">
                 <h2>Contactează-ne</h2>
+                
+                <div class="locations-container">
+                    <h3 class="locations-title">Locațiile noastre</h3>
+                    
+                    <div class="locations-tabs">
+                        <button class="location-tab active" data-city="bucuresti">București</button>
+                        <button class="location-tab" data-city="chisinau">Chișinău</button>
+                    </div>
+                    
+                    <div class="location-content active" id="bucuresti-location">
+                        <div class="location-details">
+                            <div class="location-info">
+                                <h4><i class="fas fa-map-marker-alt"></i> București, România</h4>
+                                <p>Strada Exemplu nr. 123, Sector 1</p>
+                                <p><i class="fas fa-phone-alt"></i> +40 700 123 456</p>
+                                <p><i class="fas fa-clock"></i> Luni - Vineri: 10:00 - 19:00</p>
+                                <p><i class="fas fa-clock"></i> Sâmbătă: 10:00 - 15:00</p>
+                            </div>
+                            <div class="location-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91158.11024609591!2d26.02093455!3d44.4396778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucure%C8%99ti!5e0!3m2!1sro!2sro!4v1679841245826!5m2!1sro!2sro" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-content" id="chisinau-location">
+                        <div class="location-details">
+                            <div class="location-info">
+                                <h4><i class="fas fa-map-marker-alt"></i> Chișinău, Moldova</h4>
+                                <p>Strada Exemplu nr. 456, Sector Central</p>
+                                <p><i class="fas fa-phone-alt"></i> +373 600 123 456</p>
+                                <p><i class="fas fa-clock"></i> Luni - Vineri: 09:00 - 18:00</p>
+                                <p><i class="fas fa-clock"></i> Sâmbătă: 09:00 - 14:00</p>
+                            </div>
+                            <div class="location-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86799.40290396865!2d28.774397542768283!3d47.01453461530177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97c3628b769a1%3A0x37d1d6305749dd3c!2zQ2hpyJlpbsSDdQ!5e0!3m2!1sro!2sro!4v1679842000000!5m2!1sro!2sro" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="contact-content">
                     <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Adresă</h4>
-                                <p>Strada Exemplu nr. 123, București</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4>Telefon</h4>
-                                <p>+40 700 123 456</p>
-                            </div>
-                        </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
@@ -476,56 +792,97 @@
                                 <p>contact@phibrows-studio.ro</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Program</h4>
-                                <p>Luni - Vineri: 10:00 - 19:00</p>
-                                <p>Sâmbătă: 10:00 - 15:00</p>
+                        
+                        <div class="social-media-container">
+                            <h4>Urmărește-ne</h4>
+                            <div class="social-media">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-pinterest"></i></a>
                             </div>
                         </div>
-                        <div class="social-media">
-                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        
+                        <div class="quick-contact">
+                            <h4>Contact rapid</h4>
+                            <div class="quick-buttons">
+                                <a href="tel:+40700123456" class="quick-btn"><i class="fas fa-phone-alt"></i> Sună acum</a>
+                                <a href="https://wa.me/40700123456" class="quick-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="contact-form">
-                        <h3>Rezervă o consultație</h3>
-                        <form id="appointmentForm">
+                        <h3>Întrebări sau programări</h3>
+                        <form id="contactForm">
                             <div class="form-group">
-                                <label for="nume">Nume și prenume</label>
-                                <input type="text" id="nume" name="nume" required>
+                                <label for="name">Nume și prenume</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="telefon">Telefon</label>
-                                <input type="tel" id="telefon" name="telefon" required>
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" name="phone" required>
                             </div>
                             <div class="form-group">
-                                <label for="serviciu">Serviciu dorit</label>
-                                <select id="serviciu" name="serviciu" required>
-                                    <option value="">Selectează un serviciu</option>
-                                    <option value="microblading">Microblading Sprâncene</option>
-                                    <option value="corectie">Corecții</option>
-                                    <option value="retusuri">Retușuri</option>
-                                    <option value="consultatie">Doar consultație</option>
+                                <label for="city">Orașul</label>
+                                <select id="city" name="city" required>
+                                    <option value="">Selectează orașul</option>
+                                    <option value="București">București</option>
+                                    <option value="Chișinău">Chișinău</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="mesaj">Mesaj (opțional)</label>
-                                <textarea id="mesaj" name="mesaj"></textarea>
+                                <label for="inquiry">Tipul întrebării</label>
+                                <select id="inquiry" name="inquiry" required>
+                                    <option value="">Selectează</option>
+                                    <option value="programare">Programare</option>
+                                    <option value="info">Informații servicii</option>
+                                    <option value="preturi">Informații prețuri</option>
+                                    <option value="altele">Altele</option>
+                                </select>
                             </div>
-                            <button type="submit" class="btn primary-btn">Trimite cererea</button>
+                            <div class="form-group">
+                                <label for="message">Mesaj</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn">Trimite mesajul</button>
                         </form>
                     </div>
                 </div>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91158.11024609591!2d26.02093455!3d44.4396778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucure%C8%99ti!5e0!3m2!1sro!2sro!4v1679841245826!5m2!1sro!2sro" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div class="working-hours">
+                    <h3>Program de lucru</h3>
+                    <div class="hours-container">
+                        <div class="hours-column">
+                            <h4>București</h4>
+                            <ul class="hours-list">
+                                <li><span class="day">Luni:</span> <span class="time">10:00 - 19:00</span></li>
+                                <li><span class="day">Marți:</span> <span class="time">10:00 - 19:00</span></li>
+                                <li><span class="day">Miercuri:</span> <span class="time">10:00 - 19:00</span></li>
+                                <li><span class="day">Joi:</span> <span class="time">10:00 - 19:00</span></li>
+                                <li><span class="day">Vineri:</span> <span class="time">10:00 - 19:00</span></li>
+                                <li><span class="day">Sâmbătă:</span> <span class="time">10:00 - 15:00</span></li>
+                                <li><span class="day">Duminică:</span> <span class="time">Închis</span></li>
+                            </ul>
+                        </div>
+                        <div class="hours-column">
+                            <h4>Chișinău</h4>
+                            <ul class="hours-list">
+                                <li><span class="day">Luni:</span> <span class="time">09:00 - 18:00</span></li>
+                                <li><span class="day">Marți:</span> <span class="time">09:00 - 18:00</span></li>
+                                <li><span class="day">Miercuri:</span> <span class="time">09:00 - 18:00</span></li>
+                                <li><span class="day">Joi:</span> <span class="time">09:00 - 18:00</span></li>
+                                <li><span class="day">Vineri:</span> <span class="time">09:00 - 18:00</span></li>
+                                <li><span class="day">Sâmbătă:</span> <span class="time">09:00 - 14:00</span></li>
+                                <li><span class="day">Duminică:</span> <span class="time">Închis</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -545,6 +902,7 @@
                         <li><a href="#prezentare">Microblading</a></li>
                         <li><a href="#galerie">Galerie</a></li>
                         <li><a href="#despre-mariana">Despre Mariana</a></li>
+                        <li><a href="#descriere">Descriere</a></li>
                         <li><a href="#servicii">Servicii</a></li>
                         <li><a href="#testimoniale">Testimoniale</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -552,7 +910,7 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Strada Exemplu nr. 123, București</p>
+                    <p><i class="fas fa-map-marker-alt"></i> București și Chișinău</p>
                     <p><i class="fas fa-phone-alt"></i> +40 700 123 456</p>
                     <p><i class="fas fa-envelope"></i> contact@phibrows-studio.ro</p>
                 </div>
@@ -564,5 +922,135 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        // Navigație și smooth scroll
+        // ... existing code ...
+
+        // Portofoliu filtru
+        // ... existing code ...
+
+        // Lucrări avansate - Tab-uri și Slider
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab-uri pentru categorii
+            const workTabs = document.querySelectorAll('.work-tab');
+            const worksCategories = document.querySelectorAll('.works-category');
+            
+            workTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Dezactivează toate tab-urile
+                    workTabs.forEach(t => t.classList.remove('active'));
+                    // Ascunde toate categoriile
+                    worksCategories.forEach(c => c.classList.remove('active'));
+                    
+                    // Activează tab-ul curent
+                    this.classList.add('active');
+                    // Afișează categoria corespunzătoare
+                    const category = this.getAttribute('data-category');
+                    document.getElementById(`${category}-works`).classList.add('active');
+                    
+                    // Resetează sliderul pentru categoria activă
+                    resetActiveSlider();
+                });
+            });
+            
+            // Control Slider pentru fiecare categorie
+            const sliders = document.querySelectorAll('.advanced-slider');
+            
+            sliders.forEach(slider => {
+                const slidesContainer = slider.querySelector('.advanced-slides-container');
+                const slides = slider.querySelectorAll('.advanced-slide');
+                const prevBtn = slider.querySelector('.advanced-slide-prev');
+                const nextBtn = slider.querySelector('.advanced-slide-next');
+                const indicators = slider.querySelectorAll('.indicator');
+                
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+                
+                // Funcție pentru actualizare slider
+                function updateSlider() {
+                    slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Actualizează indicatorii
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                }
+                
+                // Event pentru butonul Next
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                });
+                
+                // Event pentru butonul Prev
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                });
+                
+                // Event pentru indicatori
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateSlider();
+                    });
+                });
+                
+                // Inițializează slider-ul
+                updateSlider();
+            });
+            
+            // Resetează slider-ul activ
+            function resetActiveSlider() {
+                const activeCategory = document.querySelector('.works-category.active');
+                if (activeCategory) {
+                    const slidesContainer = activeCategory.querySelector('.advanced-slides-container');
+                    const indicators = activeCategory.querySelectorAll('.indicator');
+                    
+                    // Resetează poziția
+                    slidesContainer.style.transform = 'translateX(0)';
+                    
+                    // Resetează indicatorii
+                    indicators.forEach((indicator, index) => {
+                        if (index === 0) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                }
+            }
+            
+            // Modal pentru vizualizarea imaginilor
+            const images = document.querySelectorAll('.slide-image');
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            const modalCaption = document.querySelector('.modal-caption');
+            const closeModal = document.querySelector('.close-modal');
+            
+            images.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                    modalCaption.textContent = img.alt;
+                });
+            });
+            
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html> 
