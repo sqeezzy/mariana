@@ -190,9 +190,30 @@ nav {
     max-width: 600px;
 }
 
+.hero-heading-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.hero-portrait {
+    position: absolute;
+    right: -120px;
+    top: -30px;
+    max-width: 200px;
+    height: auto;
+    z-index: 2;
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.hero-portrait:hover {
+    transform: scale(1.05);
+}
+
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
     color: var(--light-color);
     line-height: 1.2;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -1546,6 +1567,18 @@ footer {
         text-align: center;
     }
     
+    .hero-heading-container {
+        justify-content: center;
+    }
+    
+    .hero-portrait {
+        position: relative;
+        right: auto;
+        top: auto;
+        max-width: 150px;
+        margin-left: 15px;
+    }
+    
     .hero-image {
         order: 1;
         margin-bottom: 2rem;
@@ -1603,6 +1636,10 @@ footer {
         font-size: 2rem;
     }
     
+    .hero-portrait {
+        max-width: 120px;
+    }
+    
     .testimonial-content {
         flex-direction: column;
         text-align: center;
@@ -1624,6 +1661,15 @@ footer {
     
     .hero h1 {
         font-size: 2rem;
+    }
+    
+    .hero-heading-container {
+        flex-direction: column;
+    }
+    
+    .hero-portrait {
+        margin-top: 15px;
+        margin-left: 0;
     }
     
     .cta-buttons {
