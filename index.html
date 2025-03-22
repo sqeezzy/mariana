@@ -433,6 +433,36 @@
                 });
             }
             
+            // Activare link curent bazat pe secțiunea vizibilă
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('.nav-links a');
+            
+            function setActiveLink() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                        current = '#' + section.getAttribute('id');
+                    }
+                });
+                
+                navItems.forEach(navItem => {
+                    navItem.classList.remove('active');
+                    if (navItem.getAttribute('href') === current) {
+                        navItem.classList.add('active');
+                    }
+                });
+            }
+            
+            // Verifică secțiunea activă la scroll
+            window.addEventListener('scroll', setActiveLink);
+            
+            // Verifică secțiunea activă la încărcarea paginii
+            setActiveLink();
+            
             // Smooth scrolling pentru toate ancorele
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -441,6 +471,10 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
+                        // Activează link-ul curent
+                        navItems.forEach(item => item.classList.remove('active'));
+                        this.classList.add('active');
+                        
                         window.scrollTo({
                             top: targetElement.offsetTop - 80,
                             behavior: 'smooth'
