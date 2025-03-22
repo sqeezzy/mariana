@@ -67,10 +67,12 @@
         <nav>
             <div class="logo">PhiBrows Studio</div>
             <ul class="nav-links">
-                <li><a href="#acasa" class="active">Home</a></li>
+                <li><a href="#acasa" class="active">Acasă</a></li>
                 <li><a href="#prezentare">Microblading</a></li>
                 <li><a href="#despre-mariana">Despre Mariana</a></li>
-                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#galerie">Lucrări</a></li>
+                <li><a href="#testimoniale">Aprecierile clienților</a></li>
+                <li><a href="#programari">Programări</a></li>
             </ul>
             <div class="mobile-menu-btn">
                 <span></span>
@@ -248,6 +250,141 @@
                 <div class="modal-caption"></div>
             </div>
         </div>
+
+        <!-- Testimoniale / Aprecierile clienților -->
+        <section id="testimoniale" class="testimonials">
+            <div class="container">
+                <h2>Aprecierile clienților</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="client-image">
+                                <img 
+                                    src="images/placeholder.png" 
+                                    data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                                    alt="Client 1">
+                            </div>
+                            <div class="testimonial-text">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Mariana este o profesionistă adevărată! Am încercat microblading pentru prima dată și rezultatul a depășit toate așteptările mele. Recomand cu încredere!"</p>
+                                <p class="client-name">Elena M.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="client-image">
+                                <img 
+                                    src="images/placeholder.png" 
+                                    data-dropbox-url="https://www.dropbox.com/scl/fi/qfbh2x0b117c1118adw3j/mariana_gorobet_phibrows_1675462700_3030323226115165490_47690462999-removebg-preview-1-_upscayl_2x_high-fidelity-4x.png?rlkey=o4eixi9izorkyxu2xznf7th8f&dl=1" 
+                                    alt="Client 2">
+                            </div>
+                            <div class="testimonial-text">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p>"Calitate excepțională și profesionalism. Sprâncenele mele arată natural și perfect. Cu siguranță voi reveni pentru retușuri!"</p>
+                                <p class="client-name">Ana D.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div class="prev-btn"><i class="fas fa-chevron-left"></i></div>
+                    <div class="next-btn"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programări -->
+        <section id="programari" class="booking">
+            <div class="container">
+                <h2>Programează-te acum</h2>
+                <div class="booking-content">
+                    <div class="booking-info">
+                        <h3 class="glow-text">Transformă-ți sprâncenele cu tehnica PhiBrows</h3>
+                        <p>Rezervă-ți acum o programare pentru servicii de microblading de înaltă calitate. Te așteptăm în Chișinău sau București pentru o experiență de neuitat.</p>
+                        
+                        <div class="locations-info">
+                            <div class="location-card">
+                                <h4><i class="fas fa-map-marker-alt"></i> București</h4>
+                                <p>Adresa: Strada Exemple, nr. 123</p>
+                                <p>Program: Luni - Vineri, 10:00 - 18:00</p>
+                            </div>
+                            
+                            <div class="location-card">
+                                <h4><i class="fas fa-map-marker-alt"></i> Chișinău</h4>
+                                <p>Adresa: Strada Exemple, nr. 456</p>
+                                <p>Program: Luni - Vineri, 10:00 - 18:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:+40700123456" class="contact-method">
+                                <i class="fas fa-phone-alt"></i>
+                                <span>+40 700 123 456</span>
+                            </a>
+                            
+                            <a href="mailto:contact@phibrows-studio.ro" class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>contact@phibrows-studio.ro</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-form">
+                        <h3>Solicită o programare</h3>
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <label for="booking-name">Nume complet</label>
+                                <input type="text" id="booking-name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-phone">Număr de telefon</label>
+                                <input type="tel" id="booking-phone" name="phone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-email">Email</label>
+                                <input type="email" id="booking-email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-location">Locație</label>
+                                <select id="booking-location" name="location" required>
+                                    <option value="">Selectează orașul</option>
+                                    <option value="București">București</option>
+                                    <option value="Chișinău">Chișinău</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-date">Data dorită</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="booking-message">Mesaj (opțional)</label>
+                                <textarea id="booking-message" name="message" rows="3"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn primary-btn booking-btn">Trimite solicitarea</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -263,7 +400,9 @@
                         <li><a href="#acasa">Acasă</a></li>
                         <li><a href="#prezentare">Microblading</a></li>
                         <li><a href="#despre-mariana">Despre Mariana</a></li>
-                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#galerie">Lucrări</a></li>
+                        <li><a href="#testimoniale">Aprecierile clienților</a></li>
+                        <li><a href="#programari">Programări</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -363,10 +502,18 @@
                         // Funcție pentru actualizare slider
                         function updateSlider() {
                             slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-                            
-                            // Actualizează indicatorii
-                            indicators.forEach((indicator, index) => {
-                                if (index === currentIndex) {
+                        }
+                        
+                        // Funcție pentru resetarea sliderului
+                        function resetSlider() {
+                            currentIndex = 0;
+                            updateSlider();
+                        }
+                        
+                        // Funcție pentru actualizarea indicatorilor
+                        function updateIndicators() {
+                            indicators.forEach((indicator, i) => {
+                                if (i === currentIndex) {
                                     indicator.classList.add('active');
                                 } else {
                                     indicator.classList.remove('active');
@@ -374,89 +521,86 @@
                             });
                         }
                         
-                        // Event pentru butonul Next
-                        if (nextBtn) {
-                            nextBtn.addEventListener('click', () => {
-                                currentIndex = (currentIndex + 1) % totalSlides;
-                                updateSlider();
-                            });
-                        }
-                        
-                        // Event pentru butonul Prev
+                        // Event pentru prev button
                         if (prevBtn) {
-                            prevBtn.addEventListener('click', () => {
+                            prevBtn.addEventListener('click', function() {
                                 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
                                 updateSlider();
+                                updateIndicators();
                             });
                         }
                         
-                        // Event pentru indicatori
-                        indicators.forEach((indicator, index) => {
-                            indicator.addEventListener('click', () => {
-                                currentIndex = index;
+                        // Event pentru next button
+                        if (nextBtn) {
+                            nextBtn.addEventListener('click', function() {
+                                currentIndex = (currentIndex + 1) % totalSlides;
                                 updateSlider();
+                                updateIndicators();
                             });
-                        });
-                        
-                        // Inițializează slider-ul
-                        updateSlider();
-                    });
-                    
-                    // Resetează slider-ul activ
-                    window.resetActiveSlider = function() {
-                        const activeCategory = document.querySelector('.works-category.active');
-                        if (activeCategory) {
-                            const slidesContainer = activeCategory.querySelector('.advanced-slides-container');
-                            const indicators = activeCategory.querySelectorAll('.indicator');
-                            
-                            if (slidesContainer) {
-                                // Resetează poziția
-                                slidesContainer.style.transform = 'translateX(0)';
-                                
-                                // Resetează indicatorii
-                                indicators.forEach((indicator, index) => {
-                                    if (index === 0) {
-                                        indicator.classList.add('active');
-                                    } else {
-                                        indicator.classList.remove('active');
-                                    }
-                                });
-                            }
                         }
-                    };
+                        
+                        // Auto-rotație slider la fiecare 7 secunde
+                        setInterval(() => {
+                            currentIndex = (currentIndex + 1) % totalSlides;
+                            updateSlider();
+                            updateIndicators();
+                        }, 7000);
+                    });
                 }
             }
             
-            // Modal pentru vizualizarea imaginilor
-            const images = document.querySelectorAll('.slide-image');
-            const modal = document.getElementById('image-modal');
+            // Cod pentru slider-ul de testimoniale
+            const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            let currentTestimonial = 0;
             
-            if (modal && images.length > 0) {
-                const modalImg = document.getElementById('modal-image');
-                const modalCaption = document.querySelector('.modal-caption');
-                const closeModal = document.querySelector('.close-modal');
-                
-                images.forEach(img => {
-                    img.addEventListener('click', () => {
-                        modal.style.display = 'flex';
-                        if (modalImg) modalImg.src = img.src;
-                        if (modalCaption) modalCaption.textContent = img.alt;
-                    });
-                });
-                
-                if (closeModal) {
-                    closeModal.addEventListener('click', () => {
-                        modal.style.display = 'none';
+            if (testimonialSlides.length > 0 && prevBtn && nextBtn) {
+                function showTestimonial(index) {
+                    testimonialSlides.forEach((slide, i) => {
+                        if (i === index) {
+                            slide.style.display = 'block';
+                            setTimeout(() => {
+                                slide.style.opacity = 1;
+                            }, 50);
+                        } else {
+                            slide.style.opacity = 0;
+                            setTimeout(() => {
+                                slide.style.display = 'none';
+                            }, 500);
+                        }
                     });
                 }
                 
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.style.display = 'none';
-                    }
+                nextBtn.addEventListener('click', () => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+                    showTestimonial(currentTestimonial);
+                });
+                
+                prevBtn.addEventListener('click', () => {
+                    currentTestimonial = (currentTestimonial - 1 + testimonialSlides.length) % testimonialSlides.length;
+                    showTestimonial(currentTestimonial);
+                });
+                
+                // Auto-rotație testimoniale la fiecare 7 secunde
+                setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonialSlides.length;
+                    showTestimonial(currentTestimonial);
+                }, 7000);
+            }
+            
+            // Validare și trimitere formular de programare
+            const bookingForm = document.getElementById('booking-form');
+            
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    // Aici se poate adăuga logica pentru trimiterea datelor formularului
+                    alert('Solicitarea dumneavoastră a fost primită! Vă vom contacta în curând pentru confirmare.');
+                    bookingForm.reset();
                 });
             }
         });
     </script>
 </body>
-</html> 
+</html>
