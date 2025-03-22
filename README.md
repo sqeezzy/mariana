@@ -1,6 +1,17 @@
-# Site Web de Start
+# PhiBrows Microblading - Website
 
-Un site web de bază creat cu HTML, CSS și JavaScript, care poate fi folosit ca punct de plecare pentru proiecte web.
+Un site web profesional pentru un salon de microblading care folosește tehnica PhiBrows, creat cu HTML, CSS și JavaScript.
+
+## Despre proiect
+
+Acest site prezintă serviciile de microblading PhiBrows și include următoarele secțiuni:
+- Landing page atractiv
+- Secțiune despre echipă și expertiza PhiBrows
+- Servicii oferite cu prețuri și detalii
+- Portofoliu cu imagini înainte și după
+- Testimoniale de la cliente
+- Blog cu articole informative
+- Formular de contact și informații de contact
 
 ## Structura proiectului
 
@@ -9,42 +20,56 @@ Proiectul conține următoarele fișiere:
 - `index.html` - Structura HTML a site-ului
 - `style.css` - Stilizarea CSS pentru aspectul vizual
 - `script.js` - Funcționalități JavaScript pentru interactivitate
+- `/images` - Director pentru imagini
 
 ## Funcționalități
 
 Site-ul include:
 
-- Meniu de navigare responsive
-- Secțiune hero cu call-to-action
-- Secțiune despre
-- Secțiune de servicii cu carduri animate
-- Formular de contact funcțional
-- Scroll lin între secțiuni
-- Design responsive pentru dispozitive mobile
+- Design responsiv pentru dispozitive mobile și desktop
+- Meniu de navigare cu animații
+- Slider pentru testimoniale
+- Galerie de portofoliu cu filtrare pe categorii
+- Efecte pentru imagini "înainte și după"
+- Formular de rezervare consultații
+- Animații la scroll
+- Hartă interactivă
 
-## Cum să folosești
+## Culori și branding
 
-1. Deschide fișierul `index.html` în browserul tău pentru a vizualiza site-ul
-2. Editează fișierele pentru a personaliza conținutul și aspectul:
-   - Modifică textele și structura în `index.html`
-   - Ajustează stilurile în `style.css`
-   - Adaptează funcționalitățile în `script.js`
+Site-ul folosește o paletă de culori elegantă:
+- Roz pal și nuanțe de roz-maro pentru elementele principale
+- Auriu pentru accente
+- Alb și nuanțe de gri pentru background și text
 
 ## Personalizare
 
-Poți personaliza site-ul în multe feluri:
+Pentru a personaliza site-ul:
 
-- Schimbă culorile modificând variabilele CSS
-- Adaugă secțiuni noi după modelul celor existente
-- Integrează alte librării sau framework-uri
-- Adaugă funcționalități avansate în JavaScript
+1. Înlocuiește imaginile din directorul `/images` cu fotografii reale
+2. Ajustează textele și informațiile de contact
+3. Modifică culorile în variabilele CSS din fișierul `style.css`
+4. Actualizează secțiunile de servicii și prețuri
+5. Adaugă articole reale de blog
+
+## Instalare și utilizare
+
+1. Descarcă toate fișierele
+2. Deschide fișierul `index.html` în browser
+3. Pentru publicare online, încarcă toate fișierele pe hosting
 
 ## Tehnologii utilizate
 
 - HTML5
-- CSS3 (Flexbox, Grid, Media Queries)
+- CSS3 (Variables, Flexbox, Grid, Animations)
 - JavaScript (Vanilla JS)
+- Google Fonts
+- Font Awesome icons
+
+## Hosting
+
+Site-ul este găzduit pe Vercel, cu actualizare automată la fiecare push în repository-ul GitHub.
 
 ## Licență
 
-Acest proiect poate fi folosit liber pentru orice scop. 
+Acest proiect poate fi folosit și modificat pentru orice scop comercial sau personal. 
