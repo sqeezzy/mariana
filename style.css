@@ -190,6 +190,26 @@ nav {
     max-width: 600px;
 }
 
+.hero-image {
+    flex: 1;
+    text-align: right;
+    position: relative;
+}
+
+.portrait-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.4));
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.portrait-image:hover {
+    transform: scale(1.03);
+}
+
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -247,25 +267,6 @@ nav {
     margin-bottom: 0;
     font-weight: 500;
     color: var(--light-color);
-}
-
-.hero-image {
-    flex: 1;
-    text-align: right;
-    position: relative;
-}
-
-.portrait-image {
-    max-width: 100%;
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
-    transition: transform 0.5s ease;
-}
-
-.portrait-image:hover {
-    transform: scale(1.03);
 }
 
 .cta-buttons {
@@ -1555,13 +1556,17 @@ footer {
     }
     
     .hero-content {
-        order: 2;
+        max-width: 100%;
         text-align: center;
     }
     
     .hero-image {
-        order: 1;
-        margin-bottom: 2rem;
+        margin-top: 2rem;
+        text-align: center;
+    }
+    
+    .portrait-image {
+        max-height: 500px;
     }
     
     .cta-buttons {
