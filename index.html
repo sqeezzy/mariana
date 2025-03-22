@@ -18,11 +18,11 @@
             <ul class="menu">
                 <li><a href="#acasa">Acasă</a></li>
                 <li><a href="#congres">PMU Congress</a></li>
-                <li><a href="#despre">Despre noi</a></li>
+                <li><a href="#prezentare">Microblading</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#despre-mariana">Despre Mariana</a></li>
                 <li><a href="#servicii">Servicii</a></li>
-                <li><a href="#portofoliu">Portofoliu</a></li>
                 <li><a href="#testimoniale">Testimoniale</a></li>
-                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -77,6 +77,170 @@
                         <p>Acest prestigios eveniment reunește experți PMU din întreaga lume pentru a împărtăși cele mai noi tehnici și tendințe în arta micropigmentării.</p>
                         
                         <p>Participarea noastră confirmă angajamentul pentru excelență și actualizarea continuă cu cele mai avansate metode din industrie.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prezentare Microblading -->
+        <section id="prezentare" class="presentation">
+            <div class="container">
+                <h2>Microblading Sprâncene</h2>
+                <div class="presentation-content">
+                    <div class="presentation-text">
+                        <h3 class="glow-text">Simetrie ideală în doar 1,5 ore</h3>
+                        <p>Oferim servicii de microblading sprâncene de înaltă calitate atât în <strong>Chișinău</strong> cât și în <strong>București</strong>. Obțineți look-ul perfect la studioul Mariana Gorobet.</p>
+                        
+                        <div class="features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Tehnică proprie dezvoltată de autor</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Proceduri 100% sterile și sigure</p>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Pigmenți Phi Brows de cea mai înaltă calitate</p>
+                            </div>
+                        </div>
+                        
+                        <p>Microblading-ul este o tehnică semi-permanentă care creează fire de păr artificial folosind pigmenți speciali aplicați manual pentru un aspect natural perfect. Rezultatele durează între 1-3 ani, în funcție de tipul de piele și stilul de viață.</p>
+                        
+                        <div class="cta-buttons">
+                            <a href="#galerie" class="btn primary-btn">Vezi lucrări</a>
+                            <a href="#appointment-form" class="btn secondary-btn open-popup">Programează-te</a>
+                        </div>
+                    </div>
+                    
+                    <div class="presentation-image">
+                        <img src="images/microblading-main.jpg" alt="Procedură Microblading Sprâncene">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Galerie Lucrări -->
+        <section id="galerie" class="gallery">
+            <div class="container">
+                <h2>Galerie Lucrări</h2>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn active" data-filter="toate">Toate</button>
+                    <button class="gallery-btn" data-filter="clasic">Clasic</button>
+                    <button class="gallery-btn" data-filter="pudrat">Pudrat</button>
+                    <button class="gallery-btn" data-filter="combo">Tehnică Combo</button>
+                </div>
+                
+                <div class="gallery-slider">
+                    <div class="gallery-slide" data-category="clasic">
+                        <div class="gallery-item-container">
+                            <div class="gallery-item">
+                                <img src="images/gallery/work1.jpg" alt="Microblading Clasic">
+                            </div>
+                            <div class="work-info">
+                                <h4>Microblading Clasic</h4>
+                                <p>Fire fine și naturale, ideale pentru sprâncene rare</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-slide" data-category="pudrat">
+                        <div class="gallery-item-container">
+                            <div class="gallery-item">
+                                <img src="images/gallery/work2.jpg" alt="Microblading Pudrat">
+                            </div>
+                            <div class="work-info">
+                                <h4>Microblading Pudrat</h4>
+                                <p>Efect natural pudrat pentru un look definit</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-slide" data-category="combo">
+                        <div class="gallery-item-container">
+                            <div class="gallery-item">
+                                <img src="images/gallery/work3.jpg" alt="Tehnică Combo">
+                            </div>
+                            <div class="work-info">
+                                <h4>Tehnică Combo</h4>
+                                <p>Combinație între fire fine și umbră pudrată</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mai multe imagini se pot adăuga aici -->
+                </div>
+                
+                <div class="gallery-nav">
+                    <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                
+                <div class="appointment-cta">
+                    <h3>Dorești un look perfect pentru sprâncenele tale?</h3>
+                    <button id="appointment-btn" class="btn primary-btn open-popup">Programează-te acum</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pop-up Formular Programare -->
+        <div id="appointment-popup" class="popup">
+            <div class="popup-content">
+                <span class="close-popup">&times;</span>
+                <h3>Programare Online</h3>
+                <form id="appointment-form" class="popup-form">
+                    <div class="form-group">
+                        <label for="nume">Numele Dvs</label>
+                        <input type="text" id="nume" name="nume" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Numărul Dvs</label>
+                        <input type="tel" id="telefon" name="telefon" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="oras">Orașul</label>
+                        <select id="oras" name="oras" required>
+                            <option value="">Selectează orașul</option>
+                            <option value="București">București</option>
+                            <option value="Chișinău">Chișinău</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Trimite</button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Despre Mariana Gorobet -->
+        <section id="despre-mariana" class="about-artist">
+            <div class="container">
+                <h2>Despre Mariana Gorobet</h2>
+                <div class="artist-content">
+                    <div class="artist-image">
+                        <img src="images/mariana-portrait.jpg" alt="Mariana Gorobet - Artist PMU">
+                    </div>
+                    <div class="artist-bio">
+                        <h3 class="glow-text">Royal Artist în Micropigmentare</h3>
+                        
+                        <div class="bio-text">
+                            <p>Mă numesc Mariana, sunt ROYAL ARTIST în micropigmentare și MICROBLADING PHIBROWS, cu o experiență de peste 9 ani, timp în care au fost efectuate peste 10000 de lucrări. Am o vârstă mare în experiență și cunoștințele necesare pentru muncă de înaltă calitate în domeniul micropigmentării și Microbladingului. De-a lungul carierei îmi îmbunătățesc constant calificările profesionale. Toate produsele utilizate sunt de înaltă calitate.</p>
+                            
+                            <p>Procedurile sunt efectuate ținând cont de toate normele și regulile sanitare, cu ace de unică folosință și echipamente moderne. Micropigmentarea este foarte populară în rândul femeilor, te face să te simți mai încrezătoare, economisește mult timp și în același timp arați perfect în orice situație. Vei putea să faci sport, să vizitezi piscina sau sauna, să nu-ți fie frică de zăpadă și ploaie, să mănânci, să bei, să te săruți și să nu-ţi faci griji pentru ce se va întâmpla cu machiajul tău.</p>
+                        </div>
+                        
+                        <div class="advice-section">
+                            <h4>Sfaturi pentru cliente</h4>
+                            <div class="advice-content">
+                                <p>Frumoase doamne! Dacă decideți să faceți machiaj permanent (tatuaj), atunci acordați atenție mai multor factori importanți.</p>
+                                
+                                <p>Atunci când alegi un maestru, nu te uita mai aproape de casă, caută un profesionist care să-și facă treaba bine. Este mai bine să iei o oră în plus cu transportul public decât să alegi un maestru care va trebui să repare lucrări de proastă calitate. Amintiți-vă, nu toate greșelile pot fi corectate.</p>
+                                
+                                <p>Machiajul permanent de înaltă calitate necesită mulți bani. De aceea, serviciile maeștrilor care oferă aceste proceduri la prețuri mici pot fi nesigure. Nu încercați să economisiți bani – ca urmare, veți cheltui mai mulți bani pentru înlăturare.</p>
+                                
+                                <p>Fii mereu frumoasă!❤️</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -410,11 +574,12 @@
                     <h4>Link-uri rapide</h4>
                     <ul>
                         <li><a href="#acasa">Acasă</a></li>
-                        <li><a href="#despre">Despre noi</a></li>
+                        <li><a href="#congres">PMU Congress</a></li>
+                        <li><a href="#prezentare">Microblading</a></li>
+                        <li><a href="#galerie">Galerie</a></li>
+                        <li><a href="#despre-mariana">Despre Mariana</a></li>
                         <li><a href="#servicii">Servicii</a></li>
-                        <li><a href="#portofoliu">Portofoliu</a></li>
                         <li><a href="#testimoniale">Testimoniale</a></li>
-                        <li><a href="#blog">Blog</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>

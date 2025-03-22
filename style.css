@@ -17,6 +17,7 @@
     --text-color: #f1f1f6;         /* Off-white - text principal */
     --text-muted: #B0C4DE;         /* Light Steel Blue - text secundar */
     --white-color: #ffffff;        /* White - alb pur pentru contraste */
+    --black-color: #000000;        /* Black - negru pentru fundaluri speciale */
     --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     --glow: 0 0 15px rgba(212, 175, 55, 0.2);
     --transition: all 0.3s ease;
@@ -1030,5 +1031,478 @@ footer {
     
     .portfolio-gallery, .service-cards, .blog-posts {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Secțiunea Prezentare Microblading */
+.presentation {
+    background-color: var(--black-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.presentation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 15, 30, 0.9) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: 0;
+}
+
+.presentation .container {
+    position: relative;
+    z-index: 1;
+}
+
+.presentation-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.presentation-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.presentation-text h3 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.presentation-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.presentation-text strong {
+    color: var(--accent-color);
+}
+
+.features {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-item i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.feature-item p {
+    margin-bottom: 0;
+    color: var(--light-color);
+}
+
+.presentation-image {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 3px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+}
+
+.presentation-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--accent-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.presentation-image:hover::after {
+    opacity: 1;
+}
+
+/* Secțiunea Galerie Lucrări */
+.gallery {
+    background-color: var(--black-color);
+    position: relative;
+}
+
+.gallery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(15, 15, 30, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%);
+    z-index: 0;
+}
+
+.gallery .container {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.gallery-btn {
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.gallery-btn.active, .gallery-btn:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--accent-color);
+    box-shadow: var(--glow);
+}
+
+.gallery-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.gallery-slide {
+    width: 100%;
+    padding: 1rem;
+}
+
+.gallery-item-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: var(--transition);
+}
+
+.gallery-item-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.3);
+    border-color: var(--accent-color);
+}
+
+.gallery-item {
+    overflow: hidden;
+    height: 300px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item-container:hover .gallery-item img {
+    transform: scale(1.05);
+}
+
+.work-info {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.work-info h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.work-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.prev-slide, .next-slide {
+    background-color: rgba(72, 61, 139, 0.5);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background-color: rgba(212, 175, 55, 0.2);
+    box-shadow: var(--glow);
+}
+
+.appointment-cta {
+    margin-top: 3rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.appointment-cta h3 {
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Pop-up Formular Programare */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup.active {
+    display: flex;
+}
+
+.popup-content {
+    background-color: var(--darker-color);
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--accent-color);
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-popup:hover {
+    color: var(--accent-color);
+}
+
+.popup h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.popup-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.popup-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--light-color);
+}
+
+.popup-form input,
+.popup-form select {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: rgba(15, 15, 61, 0.5);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 5px;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.popup-form input:focus,
+.popup-form select:focus {
+    border-color: var(--accent-color);
+    box-shadow: var(--glow);
+    outline: none;
+}
+
+.popup-form button {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Secțiunea Despre Mariana */
+.about-artist {
+    background-color: var(--black-color);
+    position: relative;
+}
+
+.about-artist::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.95) 0%, rgba(15, 15, 30, 0.9) 100%);
+    z-index: 0;
+}
+
+.about-artist .container {
+    position: relative;
+    z-index: 1;
+}
+
+.artist-content {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.artist-image {
+    flex: 1;
+    max-width: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 3px solid rgba(212, 175, 55, 0.2);
+}
+
+.artist-bio {
+    flex: 2;
+}
+
+.artist-bio h3 {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.bio-text {
+    margin-bottom: 2rem;
+}
+
+.bio-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.advice-section {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.advice-section h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.advice-content p {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.advice-content p:last-child {
+    color: var(--accent-color);
+    font-weight: 500;
+    text-align: right;
+    margin-top: 1.5rem;
+}
+
+/* Media Queries pentru responsivitate */
+@media (max-width: 992px) {
+    .presentation-content,
+    .artist-content {
+        flex-direction: column;
+    }
+    
+    .presentation-text {
+        order: 2;
+        max-width: 100%;
+    }
+    
+    .presentation-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+    
+    .artist-image {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-slide {
+        padding: 0.5rem;
+    }
+    
+    .gallery-item {
+        height: 250px;
+    }
+    
+    .popup-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-controls {
+        gap: 0.5rem;
+    }
+    
+    .gallery-btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-item {
+        height: 200px;
     }
 } 

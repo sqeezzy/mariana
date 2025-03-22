@@ -4,26 +4,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const menu = document.querySelector('.menu');
     
-    if (mobileMenuBtn) {
+    if (mobileMenuBtn && menu) {
         mobileMenuBtn.addEventListener('click', function() {
             menu.classList.toggle('active');
-            
-            // Animație pentru butonul de meniu
-            const spans = this.querySelectorAll('span');
-            spans.forEach(span => span.classList.toggle('active'));
-            
-            if (menu.classList.contains('active')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-            } else {
-                spans.forEach(span => {
-                    span.style.transform = 'none';
-                    span.style.opacity = '1';
-                });
-            }
+            mobileMenuBtn.classList.toggle('active');
         });
     }
+    
+    // Închide meniul când se face click pe un link
+    const menuLinks = document.querySelectorAll('.menu a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    });
     
     // Animație de scroller lin pentru meniul de navigare
     const links = document.querySelectorAll('nav a, .footer-links a, .cta-buttons a, .service-btn');
@@ -199,6 +196,159 @@ document.addEventListener('DOMContentLoaded', function() {
         
         container.addEventListener('mouseleave', () => {
             beforeImg.style.opacity = '1';
+        });
+    });
+    
+    // Funcționalitatea pop-up-ului de programare
+    const openPopupBtns = document.querySelectorAll('.open-popup');
+    const closePopup = document.querySelector('.close-popup');
+    const popup = document.getElementById('appointment-popup');
+    const appointmentForm = document.getElementById('appointment-form');
+    
+    // Deschide pop-up-ul
+    openPopupBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            popup.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Previne scroll-ul
+        });
+    });
+    
+    // Închide pop-up-ul
+    if (closePopup && popup) {
+        closePopup.addEventListener('click', function() {
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Reactivează scroll-ul
+        });
+        
+        // Închide pop-up-ul când se face click în afara conținutului
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+    
+    // Procesare formular de programare
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                nume: document.getElementById('nume').value,
+                telefon: document.getElementById('telefon').value,
+                oras: document.getElementById('oras').value
+            };
+            
+            // Ar trebui implementat un sistem de stocare/trimitere a datelor
+            // Pentru demo, afișăm doar un mesaj de confirmare
+            alert(`Programare înregistrată! Vă vom contacta în curând.
+                  Nume: ${formData.nume}
+                  Telefon: ${formData.telefon}
+                  Oraș: ${formData.oras}`);
+            
+            // Resetați formularul și închideți pop-up-ul
+            appointmentForm.reset();
+            popup.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    }
+    
+    // Funcționalitatea slider-ului galeriei
+    const gallerySlider = document.querySelector('.gallery-slider');
+    const gallerySlides = document.querySelectorAll('.gallery-slide');
+    const prevSlideBtn = document.querySelector('.prev-slide');
+    const nextSlideBtn = document.querySelector('.next-slide');
+    const galleryFilterBtns = document.querySelectorAll('.gallery-btn');
+    
+    if (gallerySlider && gallerySlides.length > 0) {
+        let currentSlide = 0;
+        
+        // Funcția pentru a afișa un slide specific
+        function showSlide(index) {
+            // Ascunde toate slide-urile
+            gallerySlides.forEach(slide => {
+                slide.style.display = 'none';
+            });
+            
+            // Afișează slide-ul curent
+            gallerySlides[index].style.display = 'block';
+            currentSlide = index;
+        }
+        
+        // Inițial afișăm primul slide
+        showSlide(0);
+        
+        // Event listeners pentru butoanele de navigare
+        if (prevSlideBtn && nextSlideBtn) {
+            prevSlideBtn.addEventListener('click', function() {
+                let newIndex = currentSlide - 1;
+                if (newIndex < 0) {
+                    newIndex = gallerySlides.length - 1;
+                }
+                showSlide(newIndex);
+            });
+            
+            nextSlideBtn.addEventListener('click', function() {
+                let newIndex = currentSlide + 1;
+                if (newIndex >= gallerySlides.length) {
+                    newIndex = 0;
+                }
+                showSlide(newIndex);
+            });
+        }
+        
+        // Filtrare galerie în funcție de categorie
+        if (galleryFilterBtns.length > 0) {
+            galleryFilterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Elimină clasa "active" de pe toate butoanele
+                    galleryFilterBtns.forEach(b => b.classList.remove('active'));
+                    // Adaugă clasa "active" pe butonul curent
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Afișează toate slide-urile inițial
+                    gallerySlides.forEach(slide => {
+                        slide.style.display = 'none';
+                    });
+                    
+                    // Filtrare și afișare slide-uri în funcție de categorie
+                    if (filter === 'toate') {
+                        // Afișează primul slide din toate categoriile
+                        showSlide(0);
+                    } else {
+                        // Afișează doar slide-urile din categoria selectată
+                        const filteredSlides = [...gallerySlides].filter(slide => 
+                            slide.getAttribute('data-category') === filter
+                        );
+                        
+                        if (filteredSlides.length > 0) {
+                            // Afișează primul slide din categoria filtrată
+                            filteredSlides[0].style.display = 'block';
+                            currentSlide = Array.from(gallerySlides).indexOf(filteredSlides[0]);
+                        }
+                    }
+                });
+            });
+        }
+    }
+    
+    // Funcționalitate smooth scroll pentru link-uri de ancorare
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80, // Ajustare pentru header fix
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 }); 
