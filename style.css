@@ -204,16 +204,55 @@ nav {
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 2.5rem;
-    color: var(--text-muted);
+    margin-bottom: 2rem;
+    color: var(--light-color);
+}
+
+/* Highlight Boxes Styling */
+.highlight-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.highlight-box {
+    background-color: rgba(25, 25, 112, 0.4);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    padding: 1.2rem;
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 150px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--glow), 0 6px 12px rgba(0, 0, 0, 0.3);
+    border-color: rgba(212, 175, 55, 0.5);
+    background-color: rgba(25, 25, 112, 0.6);
+}
+
+.highlight-box i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.highlight-box p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    font-weight: 500;
+    color: var(--light-color);
 }
 
 .hero-image {
     flex: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 3px solid rgba(212, 175, 55, 0.1);
+    text-align: right;
+    position: relative;
 }
 
 .cta-buttons {
